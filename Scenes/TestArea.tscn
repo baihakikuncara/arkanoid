@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/DummyWall.tscn" type="PackedScene" id=1]
+
+[node name="TestArea" type="Node2D"]
+
+[node name="DummyWall4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 951, 24 )
+
+[node name="DummyWall2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 59, 19 )
+
+[node name="DummyWall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 563 )
+
+[node name="DummyWall3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 960, 574 )
