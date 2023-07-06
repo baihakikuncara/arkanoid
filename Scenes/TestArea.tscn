@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/DummyWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=2]
 
 [node name="TestArea" type="Node2D"]
 
@@ -137,3 +138,6 @@ position = Vector2( 700, 0 )
 
 [node name="DummyWall9" parent="Walls/BottomWall" instance=ExtResource( 1 )]
 position = Vector2( 800, 0 )
+
+[node name="Ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( 354, 190 )
