@@ -3,11 +3,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 10 )
 
-[node name="DummyWall" type="Node2D"]
+[node name="DummyWall" type="StaticBody2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
