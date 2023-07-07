@@ -9,8 +9,7 @@
 
 [node name="Walls" type="Node2D" parent="."]
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="TopWall" type="Node2D" parent="Walls"]
@@ -43,6 +42,57 @@ position = Vector2( 700, 0 )
 
 [node name="DummyWall9" parent="Walls/TopWall" instance=ExtResource( 1 )]
 position = Vector2( 800, 0 )
+
+[node name="BottomWall" type="Node2D" parent="Walls"]
+visible = false
+position = Vector2( 0, 800 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DummyWall" parent="Walls/BottomWall" instance=ExtResource( 1 )]
+collision_layer = 0
+collision_mask = 0
+
+[node name="DummyWall2" parent="Walls/BottomWall" instance=ExtResource( 1 )]
+position = Vector2( 100, 0 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="DummyWall3" parent="Walls/BottomWall" instance=ExtResource( 1 )]
+position = Vector2( 200, 0 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="DummyWall4" parent="Walls/BottomWall" instance=ExtResource( 1 )]
+position = Vector2( 300, 0 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="DummyWall5" parent="Walls/BottomWall" instance=ExtResource( 1 )]
+position = Vector2( 400, 0 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="DummyWall6" parent="Walls/BottomWall" instance=ExtResource( 1 )]
+position = Vector2( 500, 0 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="DummyWall7" parent="Walls/BottomWall" instance=ExtResource( 1 )]
+position = Vector2( 600, 0 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="DummyWall8" parent="Walls/BottomWall" instance=ExtResource( 1 )]
+position = Vector2( 700, 0 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="DummyWall9" parent="Walls/BottomWall" instance=ExtResource( 1 )]
+position = Vector2( 800, 0 )
+collision_layer = 0
+collision_mask = 0
 
 [node name="LeftWall" type="Node2D" parent="Walls"]
 rotation = 1.5708
