@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/DummyWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Board.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/DeathZone.tscn" type="PackedScene" id=4]
 
 [node name="TestArea" type="Node2D"]
 
@@ -108,40 +109,11 @@ position = Vector2( 700, 0 )
 [node name="DummyWall9" parent="Walls/RightWall" instance=ExtResource( 1 )]
 position = Vector2( 800, 0 )
 
-[node name="BottomWall" type="Node2D" parent="Walls"]
-position = Vector2( 0, 800 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="DummyWall" parent="Walls/BottomWall" instance=ExtResource( 1 )]
-
-[node name="DummyWall2" parent="Walls/BottomWall" instance=ExtResource( 1 )]
-position = Vector2( 100, 0 )
-
-[node name="DummyWall3" parent="Walls/BottomWall" instance=ExtResource( 1 )]
-position = Vector2( 200, 0 )
-
-[node name="DummyWall4" parent="Walls/BottomWall" instance=ExtResource( 1 )]
-position = Vector2( 300, 0 )
-
-[node name="DummyWall5" parent="Walls/BottomWall" instance=ExtResource( 1 )]
-position = Vector2( 400, 0 )
-
-[node name="DummyWall6" parent="Walls/BottomWall" instance=ExtResource( 1 )]
-position = Vector2( 500, 0 )
-
-[node name="DummyWall7" parent="Walls/BottomWall" instance=ExtResource( 1 )]
-position = Vector2( 600, 0 )
-
-[node name="DummyWall8" parent="Walls/BottomWall" instance=ExtResource( 1 )]
-position = Vector2( 700, 0 )
-
-[node name="DummyWall9" parent="Walls/BottomWall" instance=ExtResource( 1 )]
-position = Vector2( 800, 0 )
-
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 354, 190 )
 
 [node name="Board" parent="." instance=ExtResource( 3 )]
 position = Vector2( 306, 740 )
+
+[node name="DeathZone" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, 951 )

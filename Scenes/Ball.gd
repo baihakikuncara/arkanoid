@@ -21,3 +21,7 @@ func _physics_process(delta):
 		direction = direction.bounce((collision.normal))
 		speed = min(speed+SPEED_INCREASE, MAX_SPEED)
 
+
+func delete_node():
+	queue_free()
+	
