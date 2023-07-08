@@ -14,6 +14,10 @@ config/name="arkanoid"
 run/main_scene="res://Scenes/TestArea.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalVariables="*res://global.gd"
+
 [display]
 
 window/size/width=600
