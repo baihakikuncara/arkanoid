@@ -116,13 +116,22 @@ position = Vector2( 500, 0 )
 [node name="DummyWall7" parent="Wall/Bottom" instance=ExtResource( 1 )]
 position = Vector2( 600, 0 )
 
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Control" type="Node2D" parent="."]
+z_index = 1
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Start" type="Button" parent="Control"]
 margin_left = 236.0
 margin_top = 500.0
 margin_right = 364.0
 margin_bottom = 520.0
 text = "Start"
+
+[node name="Quit" type="Button" parent="Control"]
+margin_left = 236.0
+margin_top = 530.0
+margin_right = 364.0
+margin_bottom = 520.0
+text = "Quit"
+
+[connection signal="pressed" from="Control/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_Quit_pressed"]
