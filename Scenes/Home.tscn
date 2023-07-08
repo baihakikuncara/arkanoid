@@ -1,0 +1,128 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/DummyWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Home.gd" type="Script" id=2]
+
+[node name="Home" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 600, 0, 600, 800, 0, 800 )
+
+[node name="Wall" type="Node2D" parent="."]
+
+[node name="Top" type="Node2D" parent="Wall"]
+
+[node name="DummyWall" parent="Wall/Top" instance=ExtResource( 1 )]
+
+[node name="DummyWall2" parent="Wall/Top" instance=ExtResource( 1 )]
+position = Vector2( 100, 0 )
+
+[node name="DummyWall3" parent="Wall/Top" instance=ExtResource( 1 )]
+position = Vector2( 200, 0 )
+
+[node name="DummyWall4" parent="Wall/Top" instance=ExtResource( 1 )]
+position = Vector2( 300, 0 )
+
+[node name="DummyWall5" parent="Wall/Top" instance=ExtResource( 1 )]
+position = Vector2( 400, 0 )
+
+[node name="DummyWall6" parent="Wall/Top" instance=ExtResource( 1 )]
+position = Vector2( 500, 0 )
+
+[node name="DummyWall7" parent="Wall/Top" instance=ExtResource( 1 )]
+position = Vector2( 600, 0 )
+
+[node name="Left" type="Node2D" parent="Wall"]
+rotation = 1.5708
+
+[node name="DummyWall" parent="Wall/Left" instance=ExtResource( 1 )]
+
+[node name="DummyWall2" parent="Wall/Left" instance=ExtResource( 1 )]
+position = Vector2( 100, 0 )
+
+[node name="DummyWall3" parent="Wall/Left" instance=ExtResource( 1 )]
+position = Vector2( 200, 0 )
+
+[node name="DummyWall4" parent="Wall/Left" instance=ExtResource( 1 )]
+position = Vector2( 300, 0 )
+
+[node name="DummyWall5" parent="Wall/Left" instance=ExtResource( 1 )]
+position = Vector2( 400, 0 )
+
+[node name="DummyWall6" parent="Wall/Left" instance=ExtResource( 1 )]
+position = Vector2( 500, 0 )
+
+[node name="DummyWall7" parent="Wall/Left" instance=ExtResource( 1 )]
+position = Vector2( 600, 0 )
+
+[node name="DummyWall8" parent="Wall/Left" instance=ExtResource( 1 )]
+position = Vector2( 700, 0 )
+
+[node name="DummyWall9" parent="Wall/Left" instance=ExtResource( 1 )]
+position = Vector2( 800, 0 )
+
+[node name="Right" type="Node2D" parent="Wall"]
+position = Vector2( 600, 0 )
+rotation = 1.5708
+
+[node name="DummyWall" parent="Wall/Right" instance=ExtResource( 1 )]
+
+[node name="DummyWall2" parent="Wall/Right" instance=ExtResource( 1 )]
+position = Vector2( 100, 0 )
+
+[node name="DummyWall3" parent="Wall/Right" instance=ExtResource( 1 )]
+position = Vector2( 200, 0 )
+
+[node name="DummyWall4" parent="Wall/Right" instance=ExtResource( 1 )]
+position = Vector2( 300, 0 )
+
+[node name="DummyWall5" parent="Wall/Right" instance=ExtResource( 1 )]
+position = Vector2( 400, 0 )
+
+[node name="DummyWall6" parent="Wall/Right" instance=ExtResource( 1 )]
+position = Vector2( 500, 0 )
+
+[node name="DummyWall7" parent="Wall/Right" instance=ExtResource( 1 )]
+position = Vector2( 600, 0 )
+
+[node name="DummyWall8" parent="Wall/Right" instance=ExtResource( 1 )]
+position = Vector2( 700, 0 )
+
+[node name="DummyWall9" parent="Wall/Right" instance=ExtResource( 1 )]
+position = Vector2( 800, 0 )
+
+[node name="Bottom" type="Node2D" parent="Wall"]
+position = Vector2( 0, 800 )
+
+[node name="DummyWall" parent="Wall/Bottom" instance=ExtResource( 1 )]
+
+[node name="DummyWall2" parent="Wall/Bottom" instance=ExtResource( 1 )]
+position = Vector2( 100, 0 )
+
+[node name="DummyWall3" parent="Wall/Bottom" instance=ExtResource( 1 )]
+position = Vector2( 200, 0 )
+
+[node name="DummyWall4" parent="Wall/Bottom" instance=ExtResource( 1 )]
+position = Vector2( 300, 0 )
+
+[node name="DummyWall5" parent="Wall/Bottom" instance=ExtResource( 1 )]
+position = Vector2( 400, 0 )
+
+[node name="DummyWall6" parent="Wall/Bottom" instance=ExtResource( 1 )]
+position = Vector2( 500, 0 )
+
+[node name="DummyWall7" parent="Wall/Bottom" instance=ExtResource( 1 )]
+position = Vector2( 600, 0 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+margin_left = 236.0
+margin_top = 500.0
+margin_right = 364.0
+margin_bottom = 520.0
+text = "Start"
