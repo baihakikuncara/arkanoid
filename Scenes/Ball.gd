@@ -11,6 +11,8 @@ func _physics_process(delta):
 	var collision = move_and_collide(direction *speed*delta)
 	if (collision):
 		var modifier = 0
+		if collision.collider.has_method("hit"):
+			collision.collider.hit()
 		if collision.collider.has_method("collide"):
 			modifier = collision.collider.collide(collision.position)
 		var angle = collision.normal
