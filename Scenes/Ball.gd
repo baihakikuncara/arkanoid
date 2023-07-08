@@ -20,5 +20,8 @@ func _physics_process(delta):
 
 func delete_node():
 	print("queue_free")
+	var parent = get_parent()
+	if parent.has_method("decreaseBall"):
+		parent.decreaseBall()
 	queue_free()
 	
