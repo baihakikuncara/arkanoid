@@ -20,6 +20,8 @@ func _process(delta):
 
 
 func collide(var p:Vector2):
+	if p.y+6 > position.y:
+		return 0
 	var shape:CollisionShape2D = get_node("CollisionShape2D")
 	var size = shape.shape.extents.x
 	return (p.x - position.x)/size * MAX_DEGREE_MODIFIER
