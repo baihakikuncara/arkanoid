@@ -107,7 +107,6 @@ position = Vector2( 700, 0 )
 position = Vector2( 800, 0 )
 
 [node name="DeathZone" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, 930 )
 
 [node name="HUD" type="Control" parent="."]
 
