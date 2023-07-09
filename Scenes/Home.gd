@@ -4,6 +4,7 @@ const Ball = preload("res://Scenes/Ball.tscn")
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
+	rng.randomize()
 	for i in 24:
 		var ball = Ball.instance()
 		ball.position.x = rng.randi_range(30,570)
