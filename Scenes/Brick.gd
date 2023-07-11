@@ -12,5 +12,5 @@ func hit():
 
 func _on_Brick_tree_exiting():
 	var stage = get_parent().get_parent()
-	if stage.has_method("brickDestroyed"):
-		stage.brickDestroyed(score)
+	if stage.has_method("brick_destroyed"):
+		stage.brick_destroyed(score)

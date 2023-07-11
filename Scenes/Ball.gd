@@ -23,11 +23,11 @@ func _physics_process(delta):
 		speed = min(speed+SPEED_INCREASE, MAX_SPEED)
 
 
-func delete_node(var notify = true):
+func delete_ball(var notify = true):
 	print("queue_free")
 	var parent = get_parent()
-	if notify and parent.has_method("decreaseBall"):
-		parent.decreaseBall()
+	if notify and parent.has_method("decrease_ball"):
+		parent.decrease_ball()
 	queue_free()
 	
 	

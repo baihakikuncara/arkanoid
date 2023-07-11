@@ -3,52 +3,52 @@ extends Node2D
 const Ball = preload("res://Scenes/Ball.tscn")
 
 export var lives = 3
-var ballCount = 0
+var ball_count = 0
 var score = 0
 var pause = false
 
 
 func _ready():
-	setLives()
-	incScore()
+	set_lives()
+	increase_score()
 
 
-func launchBall(var position):
+func launch_ball(var position):
 	position.y-=16
-	ballCount+=1
+	ball_count+=1
 	var ball = Ball.instance()
 	ball.translate(position)
 	add_child(ball)
 	
 	
-func setLives():
+func set_lives(var val=0):
+	lives += val
 	get_node("HUD/Lives").text = "x " + str(lives)
 	
 
-func incScore(var val=0):
+func increase_score(var val=0):
 	score += val
 	get_node("HUD/Score").text = str(score)
 
 
-func setStage(var stage = 0):
+func set_stage(var stage = 0):
 	get_node("HUD/Stage").text = "Stage: %d" % stage
-	setLives()
+	set_lives()
 	resume()
 
 
-func decreaseBall():
-	ballCount-=1
-	if ballCount == 0:
+func decrease_ball():
+	ball_count-=1
+	if ball_count == 0:
 		get_node("Board").setup()
-		lives-=1
-		setLives()
+		set_lives(-1)
 		if lives == 0:
-			get_node("Board").setGameOver()
+			get_node("Board").set_game_over()
 
 
-func increaseBall():
+func increase_ball():
 	lives+=1
-	setLives()
+	set_lives()
 
 
 func pause():
@@ -67,9 +67,10 @@ func resume():
 			child.resume()
 
 
-func clearBalls():
+func clear_balls():
+	ball_count = 0
 	var children = get_children()
 	for child in children:
-		if child.has_method("delete_node"):
-			child.delete_node(false)
+		if child.has_method("delete_ball"):
+			child.delete_ball(false)
 	get_node("Board").setup()

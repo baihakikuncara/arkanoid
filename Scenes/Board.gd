@@ -5,14 +5,14 @@ const MAX_DEGREE_MODIFIER = 0.5
 export var speed: float = 800
 var launched = false
 var direction: Vector2 = Vector2(0,0)
-var gameOver = false
+var game_over = false
 var pause = false
 
 func _process(delta):
-	if pause or gameOver: return
+	if pause or game_over: return
 	direction = Vector2(0,0)
 	if !launched and Input.is_action_pressed("ui_up"):
-		launchBall()
+		launch_ball()
 	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1
 	if Input.is_action_pressed("ui_right"):
@@ -29,12 +29,12 @@ func collide(var p:Vector2):
 	
 
 
-func launchBall():
+func launch_ball():
 	launched = true
 	get_node("BallSprite").visible = false
 	var player = get_parent()
-	if player.has_method("launchBall"):
-		player.launchBall(position)
+	if player.has_method("launch_ball"):
+		player.launch_ball(position)
 	
 
 func setup():
@@ -42,8 +42,8 @@ func setup():
 	get_node("BallSprite").visible = true
 	
 	
-func setGameOver():
-	gameOver = true
+func set_game_over(var val = true):
+	game_over = val
 
 
 func pause():
