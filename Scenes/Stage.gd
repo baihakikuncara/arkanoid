@@ -2,12 +2,12 @@ extends Area2D
 
 var player
 var level:Node2D
+var stage = 1
 
 func _ready():
 	player = get_node("Player")
-	loadStage(1)
-	
-	
+	loadStage(stage)
+
 
 func loadStage(var stage:int):
 	var path = "res://Scenes/Stages/Stage%0*d.tscn"%[3, stage]
@@ -19,4 +19,7 @@ func loadStage(var stage:int):
 
 func brickDestroyed(var score):
 	player.incScore(score)
-	print(level.get_child_count())
+	if level.get_child_count() <= 1:
+		stage += 1
+		level.queue_free()
+		loadStage(stage)
