@@ -4,7 +4,7 @@ const MAX_SPEED = 1000
 const SPEED_INCREASE = 10
 
 export var speed: int = 200
-export var direction: Vector2	= Vector2(0,-1)
+export var direction: Vector2	= Vector2(1,-1)
 
 
 func _physics_process(delta):
