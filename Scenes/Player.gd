@@ -5,6 +5,7 @@ const Ball = preload("res://Scenes/Ball.tscn")
 export var lives = 3
 var ballCount = 0
 var score = 0
+var pause = false
 
 
 func _ready():
@@ -31,6 +32,8 @@ func incScore(var val=0):
 
 func setStage(var stage = 0):
 	get_node("HUD/Stage").text = "Stage: %d" % stage
+	setLives()
+	resume()
 
 
 func decreaseBall():
@@ -46,3 +49,27 @@ func decreaseBall():
 func increaseBall():
 	lives+=1
 	setLives()
+
+
+func pause():
+	pause = true
+	var children = get_children()
+	for child in children:
+		if child.has_method("pause"):
+			child.pause()
+
+
+func resume():
+	pause = false
+	var children = get_children()
+	for child in children:
+		if child.has_method("resume"):
+			child.resume()
+
+
+func clearBalls():
+	var children = get_children()
+	for child in children:
+		if child.has_method("delete_node"):
+			child.delete_node(false)
+	get_node("Board").setup()

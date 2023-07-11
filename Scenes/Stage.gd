@@ -15,11 +15,13 @@ func loadStage(var stage:int):
 	level = scene.instance()
 	add_child(level)
 	player.setStage(stage)
-	
+
 
 func brickDestroyed(var score):
 	player.incScore(score)
 	if level.get_child_count() <= 1:
-		stage += 1
 		level.queue_free()
+		player.pause()
+		player.clearBalls()
+		stage += 1
 		loadStage(stage)

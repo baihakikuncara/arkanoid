@@ -6,9 +6,10 @@ export var speed: float = 800
 var launched = false
 var direction: Vector2 = Vector2(0,0)
 var gameOver = false
+var pause = false
 
 func _process(delta):
-	if gameOver: return
+	if pause or gameOver: return
 	direction = Vector2(0,0)
 	if !launched and Input.is_action_pressed("ui_up"):
 		launchBall()
@@ -43,3 +44,11 @@ func setup():
 	
 func setGameOver():
 	gameOver = true
+
+
+func pause():
+	pause = true
+	
+	
+func resume():
+	pause = false
