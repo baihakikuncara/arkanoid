@@ -39,13 +39,9 @@ func load_stage():
 	var scene = load(path)
 	level = scene.instance()
 	add_child(level)
+	
 	get_node("StageTimer").start()
-	
-	get_node("HUD/Stage").text = "Stage: %d" % current_level
-	var message:Label = get_node("HUD/Message") 
-	message.text = "Stage: %d" % current_level
-	message.visible = true
-	
+	get_node("Splash").show_splash("Stage: %d" % current_level)
 	add_lives()
 	increase_score()
 
@@ -77,9 +73,8 @@ func clear_balls():
 
 
 func game_over():
-	var message: Label = get_node("HUD/Message")
-	message.text = "Game Over"
-	message.visible = true
+	var text = "Game Over\nStage: %d\nScore: %d" %[current_level, score]
+	get_node("Splash").show_splash(text)
 	get_node("Board").game_over()
 	get_node("GameOverTimer").start()
 
@@ -93,7 +88,7 @@ func pause():
 
 
 func resume():
-	get_node("HUD/Message").visible = false
+	get_node("Splash").hide_splash()
 	pause = false
 	var children = get_children()
 	for child in children:
