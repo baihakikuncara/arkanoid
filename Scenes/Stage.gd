@@ -15,6 +15,8 @@ func load_stage(var stage:int):
 	level = scene.instance()
 	add_child(level)
 	player.set_stage(stage)
+	player.pause()
+	get_node("StartTimer").start()
 
 
 func brick_destroyed(var score):
@@ -25,3 +27,7 @@ func brick_destroyed(var score):
 		player.clear_balls()
 		stage += 1
 		load_stage(stage)
+
+
+func _on_StartTimer_timeout():
+	player.resume()

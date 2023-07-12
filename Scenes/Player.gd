@@ -33,8 +33,10 @@ func increase_score(var val=0):
 
 func set_stage(var stage = 0):
 	get_node("HUD/Stage").text = "Stage: %d" % stage
+	var message:Label = get_node("HUD/Message") 
+	message.text = "Stage: %d" % stage
+	message.visible = true
 	set_lives()
-	resume()
 
 
 func decrease_ball():
@@ -43,12 +45,20 @@ func decrease_ball():
 		get_node("Board").setup()
 		set_lives(-1)
 		if lives == 0:
-			get_node("Board").set_game_over()
+			game_over()
 
 
 func increase_ball():
 	lives+=1
 	set_lives()
+
+
+func game_over():
+	var message: Label = get_node("HUD/Message")
+	message.text = "Game Over"
+	message.visible = true
+	get_node("Board").game_over()
+	get_node("GameOverTimer").start()
 
 
 func pause():
@@ -60,6 +70,7 @@ func pause():
 
 
 func resume():
+	get_node("HUD/Message").visible = false
 	pause = false
 	var children = get_children()
 	for child in children:
@@ -74,3 +85,7 @@ func clear_balls():
 		if child.has_method("delete_ball"):
 			child.delete_ball(false)
 	get_node("Board").setup()
+
+
+func _on_GameOverTimer_timeout():
+	get_tree().change_scene("res://Scenes/Home.tscn")
