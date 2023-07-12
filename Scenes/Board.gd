@@ -6,7 +6,7 @@ export var speed: float = 800
 var launched = false
 var direction: Vector2 = Vector2(0,0)
 var game_over = false
-var pause = false
+var pause = true
 
 func _process(delta):
 	if pause or game_over : return
