@@ -33,7 +33,13 @@ func delete_ball(var notify = true):
 	
 func pause():
 	pause = true
+	var children = get_children()
+	for child in children:
+		if child.has_method("pause"): child.pause()
 	
 
 func resume():
 	pause = false
+	var children = get_children()
+	for child in children:
+		if child.has_method("resume"): child.resume()

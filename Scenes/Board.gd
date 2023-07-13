@@ -43,11 +43,21 @@ func setup():
 	
 func game_over(var val = true):
 	game_over = val
+	var children = get_children()
+	for child in children:
+		if child.has_method("game_over"): child.game_over()
 
 
 func pause():
 	pause = true
+	var children = get_children()
+	for child in children:
+		if child.has_method("pause"): child.pause()
 	
 	
 func resume():
 	pause = false
+	var children = get_children()
+	for child in children:
+		if child.has_method("resume"): child.resume()
+	
