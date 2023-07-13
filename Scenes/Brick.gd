@@ -1,8 +1,16 @@
+tool
+
 extends StaticBody2D
 
 export var durability = 1
 export var score = 10
 export var breakable = true
+
+
+func _ready():
+	if !breakable:
+		$Outline.color = Color.white
+		$Fill.color = Color.black
 
 
 func hit():
