@@ -7,10 +7,15 @@ var ball_count = 0
 var pause = true
 var level: Node2D
 var brick_count = 0
+var lives = 3
+var scores = 0
 
 
 func _ready():
 	load_stage()
+	$HUD.set_lives(lives)
+	$HUD.set_score(scores)
+	$HUD.set_stage(current_level)
 
 
 func launch_ball(var position):
@@ -41,7 +46,8 @@ func load_stage():
 
 
 func brick_destroyed(var score):
-	$HUD.add_score(score)
+	scores += score
+	$HUD.set_score(score)
 	brick_count -= 1
 	if brick_count <= 0:
 		level.queue_free()
@@ -55,8 +61,9 @@ func decrease_ball():
 	ball_count-=1
 	if ball_count == 0:
 		$Board.setup()
-		$HUD.add_lives(-1)
-		if $HUD.lives == 0:
+		lives-=1
+		$HUD.set_lives(lives)
+		if lives == 0:
 			game_over()
 
 

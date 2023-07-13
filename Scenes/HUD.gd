@@ -1,26 +1,18 @@
 extends Node2D
 
-var lives = 3
-var stage = 1
-var scores = 0
-
-
 func reset():
-	lives = 3
-	stage = 1
-	scores = 0
+	set_lives(3)
+	set_stage(1)
+	set_score(0)
 
 
-func add_lives(var val = 1):
-	lives += val
+func set_lives(var lives = 1):
 	$Lives.text = "x " + str(lives)
 	
 
-func update_stage(var val):
-	stage = val
+func set_stage(var stage):
 	$Stage.text = "Stage: " + str(stage)
 	
 	
-func add_score(var val = 0):
-	scores += val
+func set_score(var scores = 0):
 	$Score.text = "Score: " + str(scores)
