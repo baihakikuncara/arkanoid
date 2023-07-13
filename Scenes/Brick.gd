@@ -2,9 +2,11 @@ extends StaticBody2D
 
 export var durability = 1
 export var score = 10
+export var breakable = true
 
 
 func hit():
+	if !breakable: return
 	durability -= 1
 	if durability == 0:
 		queue_free()

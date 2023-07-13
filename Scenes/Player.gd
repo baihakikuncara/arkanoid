@@ -40,9 +40,8 @@ func load_stage():
 	brick_count = 0
 	var children = level.get_children()
 	for child in children:
-		if child.has_method("hit"):
+		if "breakable" in child and child.breakable:
 			brick_count+=1
-	
 	set_hud()
 	$Splash.show_stage_splash(current_level)
 	$StageTimer.start()
