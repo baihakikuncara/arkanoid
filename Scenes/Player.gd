@@ -13,6 +13,10 @@ var scores = 0
 
 func _ready():
 	load_stage()
+	set_hud()
+
+
+func set_hud():
 	$HUD.set_lives(lives)
 	$HUD.set_score(scores)
 	$HUD.set_stage(current_level)
@@ -39,10 +43,10 @@ func load_stage():
 		if child.has_method("hit"):
 			brick_count+=1
 	
-	get_node("HUD/Stage").text = "Stage: %d" % current_level
+	set_hud()
 	
 	$StageTimer.start()
-	$Splash.show_splash("Stage: %d" % current_level)
+	$Splash.show_stage_splash(current_level)
 
 
 func brick_destroyed(var score):
@@ -77,8 +81,7 @@ func clear_balls():
 
 
 func game_over():
-	var text = "Game Over\nStage: %d\nScore: %d" %[current_level, $HUD.scores]
-	$Splash.show_splash(text)
+	$Splash.show_game_over_splash(current_level, scores)
 	$GameOverTimer.start()
 	var children = get_children()
 	for child in children:
