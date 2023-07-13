@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Board.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/DummyWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/DeathZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/BallSprite.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Splash.tscn" type="PackedScene" id=6]
