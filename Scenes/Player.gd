@@ -8,6 +8,7 @@ var ball_count = 0
 var score = 0
 var pause = true
 var level: Node2D
+var brick_count = 0
 
 
 func _ready():
@@ -37,8 +38,15 @@ func increase_score(var val=0):
 func load_stage():
 	var path = "res://Scenes/Stages/Stage%0*d.tscn"%[3, current_level]
 	var scene = load(path)
+	if level != null : level.queue_free()
 	level = scene.instance()
 	add_child(level)
+	
+	brick_count = 0
+	var children = level.get_children()
+	for child in children:
+		if child.has_method("hit"):
+			brick_count+=1
 	
 	get_node("StageTimer").start()
 	get_node("Splash").show_splash("Stage: %d" % current_level)
@@ -48,7 +56,8 @@ func load_stage():
 
 func brick_destroyed(var score):
 	increase_score(score)
-	if level.get_child_count() <= 1:
+	brick_count -= 1
+	if brick_count <= 0:
 		level.queue_free()
 		pause()
 		clear_balls()
