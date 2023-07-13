@@ -44,21 +44,20 @@ func load_stage():
 			brick_count+=1
 	
 	set_hud()
-	
-	$StageTimer.start()
 	$Splash.show_stage_splash(current_level)
+	$StageTimer.start()
 
 
 func brick_destroyed(var score):
 	scores += score
-	$HUD.set_score(score)
 	brick_count -= 1
 	if brick_count <= 0:
-		level.queue_free()
 		pause()
+		level.queue_free()
 		clear_balls()
 		current_level += 1
 		load_stage()
+	set_hud()
 
 
 func decrease_ball():
@@ -66,9 +65,9 @@ func decrease_ball():
 	if ball_count == 0:
 		$Board.setup()
 		lives-=1
-		$HUD.set_lives(lives)
 		if lives == 0:
 			game_over()
+	set_hud()
 
 
 func clear_balls():
