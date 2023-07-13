@@ -60,7 +60,7 @@ margin_right = 570.0
 margin_bottom = 25.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "9"
+text = "Score: 9"
 align = 2
 
 [node name="Walls" type="Node2D" parent="."]

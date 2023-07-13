@@ -32,7 +32,7 @@ func add_lives(var val=0):
 
 func increase_score(var val=0):
 	score += val
-	get_node("HUD/Score").text = str(score)
+	get_node("HUD/Score").text = "Score: " + str(score)
 
 
 func load_stage():
@@ -47,6 +47,8 @@ func load_stage():
 	for child in children:
 		if child.has_method("hit"):
 			brick_count+=1
+	
+	get_node("HUD/Stage").text = "Stage: %d" % current_level
 	
 	get_node("StageTimer").start()
 	get_node("Splash").show_splash("Stage: %d" % current_level)
