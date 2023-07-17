@@ -24,7 +24,6 @@ func _physics_process(delta):
 
 
 func delete_ball(var notify = true):
-	print("queue_free")
 	var parent = get_parent()
 	if notify and parent.has_method("decrease_ball"):
 		parent.decrease_ball()

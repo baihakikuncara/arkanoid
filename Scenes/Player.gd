@@ -23,7 +23,6 @@ func set_hud():
 
 
 func launch_ball(var position):
-	position.y-=16
 	ball_count+=1
 	var ball = Ball.instance()
 	ball.translate(position)
