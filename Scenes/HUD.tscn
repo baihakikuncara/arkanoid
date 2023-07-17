@@ -8,7 +8,7 @@ script = ExtResource( 2 )
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 600.0
-margin_bottom = 40.0
+margin_bottom = 25.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="BallSprite" parent="." instance=ExtResource( 1 )]
