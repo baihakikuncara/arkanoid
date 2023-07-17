@@ -5,12 +5,21 @@ extends StaticBody2D
 export var durability = 1
 export var score = 10
 export var breakable = true
-
+export var outline: Color = Color.black
+export var fill: Color = Color.green
+export var line_width = 2
 
 func _ready():
 	if !breakable:
-		$Outline.color = Color.white
-		$Fill.color = Color.black
+		outline = Color.white
+		fill = Color.black
+		
+
+func _draw():
+	var width = $CollisionShape2D.shape.extents.x 
+	var height = $CollisionShape2D.shape.extents.y
+	draw_rect(Rect2(-width, -height, width*2, height*2), fill)
+	draw_rect(Rect2(-width+(line_width/2), -height+(line_width/2), width*2-line_width, height*2-line_width), outline, false, line_width, true)
 
 
 func hit():
