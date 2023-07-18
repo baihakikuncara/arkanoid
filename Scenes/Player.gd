@@ -1,6 +1,7 @@
 extends Node2D
 
-const Ball = preload("res://Scenes/Ball.tscn")
+const BALL_SCENE = preload("res://Scenes/Ball.tscn")
+const SCORE_BONUS = 2
 
 var current_level = 1
 var ball_count = 0
@@ -24,7 +25,7 @@ func set_hud():
 
 func launch_ball(var position):
 	ball_count+=1
-	var ball = Ball.instance()
+	var ball = BALL_SCENE.instance()
 	ball.translate(position)
 	add_child(ball)
 	
@@ -47,7 +48,7 @@ func load_stage():
 
 
 func brick_destroyed(var score):
-	scores += score
+	scores += score * SCORE_BONUS / min($Board.length, 2)
 	brick_count -= 1
 	if brick_count <= 0:
 		pause()

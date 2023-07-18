@@ -3,6 +3,8 @@ tool
 extends KinematicBody2D
 
 const MAX_DEGREE_MODIFIER = 0.5
+const MIN_BOARD_SIZE = 1
+const MAX_BOARD_SIZE = 4
 
 export var speed: float = 800
 var launched = false
@@ -24,13 +26,12 @@ func _process(delta):
 
 
 func _draw():
-	var x= $CollisionShape2D.shape.extents.x * 2
-	var y = $CollisionShape2D.shape.extents.y * 2
-	draw_rect(Rect2(Vector2(-x/2, -y/2), Vector2(x, y)), Color.azure)
+	var rect = Vector2($CollisionShape2D.shape.extents.x * 2, $CollisionShape2D.shape.extents.y * 2)
+	draw_rect(Rect2(-rect/2, rect), Color.azure)
 
 
 func resize(var val):
-	length = clamp(length + val, 1, 4)
+	length = clamp(length + val, MIN_BOARD_SIZE, MAX_BOARD_SIZE)
 	$CollisionShape2D.shape.extents.x = 16 * length	
 	update()
 
