@@ -1,3 +1,5 @@
+tool
+
 extends KinematicBody2D
 
 const MAX_DEGREE_MODIFIER = 0.5
@@ -7,6 +9,7 @@ var launched = false
 var direction: Vector2 = Vector2(0,0)
 var game_over = false
 var pause = true
+var length = 2
 
 func _process(delta):
 	if pause or game_over : return
@@ -18,6 +21,18 @@ func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
 	move_and_collide(direction * speed * delta)
+
+
+func _draw():
+	var x= $CollisionShape2D.shape.extents.x * 2
+	var y = $CollisionShape2D.shape.extents.y * 2
+	draw_rect(Rect2(Vector2(-x/2, -y/2), Vector2(x, y)), Color.azure)
+
+
+func resize(var val):
+	length = clamp(length + val, 1, 4)
+	$CollisionShape2D.shape.extents.x = 16 * length	
+	update()
 
 
 func collide(var p:Vector2):
