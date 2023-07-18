@@ -49,7 +49,7 @@ func launch_ball():
 	get_node("BallSprite").visible = false
 	var player = get_parent()
 	if player.has_method("launch_ball"):
-		player.launch_ball(position+$BallSprite.position)
+		player.launch_ball(position+$BallSprite.position, Vector2(1,-1))
 	
 
 func setup():

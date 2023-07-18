@@ -23,12 +23,22 @@ func set_hud():
 	$HUD.set_stage(current_level)
 
 
-func launch_ball(var position):
+func launch_ball(var position, var direction):
 	ball_count+=1
 	var ball = BALL_SCENE.instance()
 	ball.translate(position)
+	ball.direction = direction
 	add_child(ball)
-	
+
+
+func multiply_ball():
+	var children = get_children();
+	for child in children:
+		if child.has_method("delete_ball"):
+			var direction = child.direction
+			launch_ball(child.position, child.direction.rotated(0.5))
+			launch_ball(child.position, child.direction.rotated(-0.5))
+			
 
 func load_stage():
 	var path = "res://Scenes/Stages/Stage%0*d.tscn"%[3, current_level]
