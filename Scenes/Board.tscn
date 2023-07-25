@@ -8,6 +8,9 @@ extents = Vector2( 32, 6 )
 
 [node name="Board" type="KinematicBody2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -15,3 +18,9 @@ shape = SubResource( 1 )
 
 [node name="BallSprite" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -12 )
+
+[node name="bullet1" type="Position2D" parent="."]
+position = Vector2( -32, -16 )
+
+[node name="bullet0" type="Position2D" parent="."]
+position = Vector2( 32, -16 )

@@ -1,6 +1,7 @@
 extends Node2D
 
 const BALL_SCENE = preload("res://Scenes/Ball.tscn")
+const BULLET_SCENE = preload("res://Scenes/Bullet.tscn")
 const SCORE_BONUS = 2
 
 var current_level = 1
@@ -86,6 +87,12 @@ func clear_balls():
 		if child.has_method("delete_ball"):
 			child.delete_ball(false)
 	$Board.setup()
+
+
+func shoot(var pos):
+	var bullet = BULLET_SCENE.instance()
+	bullet.translate(pos)
+	add_child(bullet)
 
 
 func game_over():

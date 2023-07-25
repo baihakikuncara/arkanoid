@@ -5,6 +5,7 @@ extends KinematicBody2D
 const MAX_DEGREE_MODIFIER = 0.5
 const MIN_BOARD_SIZE = 1
 const MAX_BOARD_SIZE = 4
+const SHOOT_TIMEOUT = 1
 
 export var speed: float = 800
 var launched = false
@@ -12,9 +13,17 @@ var direction: Vector2 = Vector2(0,0)
 var game_over = false
 var pause = true
 var length = 2
+var shoot_mode = false
+var shoot_timer = 0
+
 
 func _process(delta):
 	if pause or game_over : return
+	if shoot_mode:
+		shoot_timer+= delta
+		if shoot_timer > SHOOT_TIMEOUT:
+			shoot_timer = 0
+			shoot()
 	direction = Vector2(0,0)
 	if !launched and Input.is_action_pressed("ui_up"):
 		launch_ball()
@@ -26,8 +35,9 @@ func _process(delta):
 
 
 func _draw():
+	var color = Color.red if shoot_mode else Color.azure
 	var rect = Vector2($CollisionShape2D.shape.extents.x * 2, $CollisionShape2D.shape.extents.y * 2)
-	draw_rect(Rect2(-rect/2, rect), Color.azure)
+	draw_rect(Rect2(-rect/2, rect), color)
 
 
 func resize(var val):
@@ -51,6 +61,13 @@ func launch_ball():
 	if player.has_method("launch_ball"):
 		player.launch_ball(position+$BallSprite.position, Vector2(1,-1))
 	
+	
+func shoot():
+	var parent = get_parent()
+	if parent.has_method("shoot"):
+		parent.shoot($bullet0.global_position)
+		parent.shoot($bullet1.global_position)
+		
 
 func setup():
 	launched = false
@@ -76,4 +93,9 @@ func resume():
 	var children = get_children()
 	for child in children:
 		if child.has_method("resume"): child.resume()
-	
+
+
+func set_shoot_mode(var state):
+	shoot_mode = state
+	if shoot_mode: shoot_timer = SHOOT_TIMEOUT
+	update()

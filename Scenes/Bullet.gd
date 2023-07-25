@@ -2,7 +2,7 @@
 extends KinematicBody2D
 
 var speed = 10
-var pause = true
+var pause = false
 
 
 func _draw():
