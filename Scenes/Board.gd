@@ -5,7 +5,7 @@ extends KinematicBody2D
 const MAX_DEGREE_MODIFIER = 0.5
 const MIN_BOARD_SIZE = 1
 const MAX_BOARD_SIZE = 4
-const SHOOT_TIMEOUT = 1
+const SHOOT_TIMEOUT = 0.7
 
 export var speed: float = 800
 var launched = false
