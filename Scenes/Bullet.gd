@@ -19,6 +19,10 @@ func _process(delta):
 		queue_free()
 
 
+func delete():
+	queue_free()
+
+
 func pause():
 	pause = true
 	for children in get_children():

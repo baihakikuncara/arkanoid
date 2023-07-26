@@ -73,6 +73,8 @@ func brick_destroyed(var score):
 		pause()
 		level.queue_free()
 		clear_balls()
+		clear_powerups()
+		$Board.setup()
 		current_level += 1
 		load_stage()
 	set_hud()
@@ -94,7 +96,13 @@ func clear_balls():
 	for child in children:
 		if child.has_method("delete_ball"):
 			child.delete_ball(false)
-	$Board.setup()
+
+
+#delete powerups and bullets
+func clear_powerups():
+	for child in get_children():
+		if child.has_method("delete"):
+			child.delete()
 
 
 func shoot(var pos):
