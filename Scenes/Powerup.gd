@@ -1,8 +1,16 @@
 extends Area2D
 
+enum POWERUP {
+	NONE,
+	INC_SIZE,
+	DEC_SIZE,
+	SHOOT,
+	MULTIPLY
+}
+
 var color = Color.aqua
 var speed = 100
-var type = 0
+var type = POWERUP.NONE
 
 func _draw():
 	var width = $CollisionShape2D.shape.height
@@ -23,6 +31,20 @@ func delete():
 
 
 func _on_Powerup_body_entered(body):
-	if body.has_method("powerup"):
-		body.powerup(type)
-		delete()
+	match type:
+		POWERUP.INC_SIZE:
+			if body.has_method("resize"):
+				body.resize(1)
+				delete()
+		POWERUP.DEC_SIZE:
+			if body.has_method("resize"):
+				body.resize(-1)
+				delete()
+		POWERUP.SHOOT:
+			if body.has_method("set_shoot_mode"):
+				body.set_shoot_mode(true)
+				delete()
+		POWERUP.MULTIPLY:
+			if body.has_method("multiply"):
+				body.multiply()
+				delete()

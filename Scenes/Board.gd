@@ -6,13 +6,14 @@ const MAX_DEGREE_MODIFIER = 0.5
 const MIN_BOARD_SIZE = 1
 const MAX_BOARD_SIZE = 4
 const SHOOT_TIMEOUT = 0.7
+const DEFAULT_LENGTH = 2
 
 export var speed: float = 800
 var launched = false
 var direction: Vector2 = Vector2(0,0)
 var game_over = false
 var pause = true
-var length = 2
+var length = DEFAULT_LENGTH
 var shoot_mode = false
 var shoot_timer = 0
 
@@ -96,11 +97,13 @@ func resume():
 
 
 func set_shoot_mode(var state):
+	if shoot_mode == state: return
 	shoot_mode = state
 	if shoot_mode: shoot_timer = SHOOT_TIMEOUT
 	update()
 
 
-func powerup(var type):
-	print("powerup")
-	pass
+func multiply():
+	get_parent().multiply_ball()
+	
+

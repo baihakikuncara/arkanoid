@@ -1,13 +1,17 @@
 extends Node2D
 
-var shoot_mode = true
+const POWERUP = preload("res://Scenes/Powerup.tscn")
+
 var pause = false
+var power = 1
 
 func _process(delta):
 	if Input.is_action_just_released("ui_accept"):
-		$Player.multiply_ball()
-		$Player/Board.set_shoot_mode(shoot_mode)
-		shoot_mode = !shoot_mode
+		var powerup = POWERUP.instance()
+		powerup.position = Vector2(300, 200)
+		powerup.type = power
+		power = (power + 1) % len(powerup.POWERUP)
+		add_child(powerup)
 	if Input.is_action_just_released("ui_page_up"):
 		print("resize+")
 		$Player/Board.resize(1)
