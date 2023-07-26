@@ -72,7 +72,11 @@ func shoot():
 
 func setup():
 	launched = false
+	shoot_mode = false
+	shoot_timer = 0
 	get_node("BallSprite").visible = true
+	resize(DEFAULT_LENGTH- length)
+	update()
 	
 	
 func game_over(var val = true):
