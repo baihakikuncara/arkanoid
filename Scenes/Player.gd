@@ -2,6 +2,7 @@ extends Node2D
 
 const BALL_SCENE = preload("res://Scenes/Ball.tscn")
 const BULLET_SCENE = preload("res://Scenes/Bullet.tscn")
+const POWERUP = preload("res://Scenes/Powerup.tscn")
 const SCORE_BONUS = 2
 
 var current_level = 1
@@ -39,7 +40,14 @@ func multiply_ball():
 			var direction = child.direction
 			launch_ball(child.position, child.direction.rotated(0.5))
 			launch_ball(child.position, child.direction.rotated(-0.5))
-			
+
+
+func spawn_powerup(var location, var type = 0):
+	var powerup = POWERUP.instance()
+	powerup.position = location
+	powerup.type = type
+	add_child(powerup)
+	
 
 func load_stage():
 	var path = "res://Scenes/Stages/Stage%0*d.tscn"%[3, current_level]

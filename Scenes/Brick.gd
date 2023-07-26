@@ -8,11 +8,16 @@ export var breakable = true
 export var outline: Color = Color.black
 export var fill: Color = Color.green
 export var line_width = 2
+export var has_powerup = false
+export var powerup_type = 0
+
 
 func _ready():
 	if !breakable:
 		outline = Color.white
 		fill = Color.black
+	if has_powerup:
+		fill = Color.cyan
 		
 
 func _draw():
@@ -27,6 +32,10 @@ func hit():
 	durability -= 1
 	if durability == 0:
 		queue_free()
+		if has_powerup:
+			var parent = get_parent().get_parent()
+			if parent.has_method("spawn_powerup"):
+				parent.spawn_powerup(global_position, powerup_type)
 
 
 func _on_Brick_tree_exiting():
