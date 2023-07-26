@@ -8,6 +8,7 @@ enum POWERUP {
 	MULTIPLY
 }
 
+var pause = false
 var color = Color.aqua
 var speed = 100
 var type = POWERUP.NONE
@@ -23,6 +24,7 @@ func _draw():
 
 
 func _process(delta):
+	if pause: return
 	position.y += speed * delta
 
 
@@ -48,3 +50,15 @@ func _on_Powerup_body_entered(body):
 			if body.has_method("multiply"):
 				body.multiply()
 				delete()
+
+
+func pause():
+	pause = true
+	for child in get_children():
+		if child.has_method("pause"): child.pause()
+		
+
+func resume():
+	pause = false
+	for child in get_children():
+		if child.has_method("resume"): child.resume()
