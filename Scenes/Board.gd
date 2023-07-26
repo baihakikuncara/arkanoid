@@ -99,3 +99,8 @@ func set_shoot_mode(var state):
 	shoot_mode = state
 	if shoot_mode: shoot_timer = SHOOT_TIMEOUT
 	update()
+
+
+func powerup(var type):
+	print("powerup")
+	pass
