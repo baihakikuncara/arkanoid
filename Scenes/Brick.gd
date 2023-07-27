@@ -32,13 +32,10 @@ func hit():
 	durability -= 1
 	if durability == 0:
 		queue_free()
+		var stage = get_parent().get_parent()
+		if stage.has_method("brick_destroyed"):
+			stage.brick_destroyed(score)
 		if has_powerup:
 			var parent = get_parent().get_parent()
 			if parent.has_method("spawn_powerup"):
 				parent.spawn_powerup(global_position, powerup_type)
-
-
-func _on_Brick_tree_exiting():
-	var stage = get_parent().get_parent()
-	if stage.has_method("brick_destroyed"):
-		stage.brick_destroyed(score)
