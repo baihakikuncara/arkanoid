@@ -42,6 +42,7 @@ func _draw():
 
 
 func resize(var val):
+	set_shoot_mode(false)
 	length = clamp(length + val, MIN_BOARD_SIZE, MAX_BOARD_SIZE)
 	$CollisionShape2D.shape.extents.x = 16 * length	
 	update()
@@ -101,9 +102,10 @@ func resume():
 
 
 func set_shoot_mode(var state):
-	if shoot_mode == state: return
+	if state: resize(DEFAULT_LENGTH - length)
 	shoot_mode = state
-	if shoot_mode: shoot_timer = SHOOT_TIMEOUT
+	if shoot_mode: 
+		shoot_timer = SHOOT_TIMEOUT
 	update()
 
 
