@@ -52,6 +52,11 @@ func spawn_powerup(var location, var type = 0):
 
 func load_stage():
 	var path = "res://Scenes/Stages/Stage%0*d.tscn"%[3, current_level]
+	var directory = Directory.new()
+	if !directory.file_exists(path):
+		current_level-=1
+		game_over()
+		return
 	var scene = load(path)
 	if level != null : level.queue_free()
 	level = scene.instance()
