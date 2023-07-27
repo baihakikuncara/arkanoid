@@ -7,8 +7,9 @@ const MIN_BOARD_SIZE = 1
 const MAX_BOARD_SIZE = 4
 const SHOOT_TIMEOUT = 0.7
 const DEFAULT_LENGTH = 2
+const SPEED = 100
 
-export var speed: float = 800
+var speed_adj = 0
 var launched = false
 var direction: Vector2 = Vector2(0,0)
 var game_over = false
@@ -32,7 +33,10 @@ func _process(delta):
 		direction.x -= 1
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
-	move_and_collide(direction * speed * delta)
+		
+	if direction.x == 0: speed_adj = 0
+	else: speed_adj+=delta
+	move_and_collide(direction * SPEED * clamp(speed_adj, 0, 0.8))
 
 
 func _draw():
