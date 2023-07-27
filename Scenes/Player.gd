@@ -25,11 +25,12 @@ func set_hud():
 	$HUD.set_stage(current_level)
 
 
-func launch_ball(var position, var direction):
+func launch_ball(var position, var direction, var speed = 200):
 	ball_count+=1
 	var ball = BALL_SCENE.instance()
 	ball.translate(position)
 	ball.direction = direction
+	ball.speed = speed
 	add_child(ball)
 
 
@@ -38,8 +39,8 @@ func multiply_ball():
 	for child in children:
 		if child.has_method("delete_ball"):
 			var direction = child.direction
-			launch_ball(child.position, child.direction.rotated(0.5))
-			launch_ball(child.position, child.direction.rotated(-0.5))
+			launch_ball(child.position, child.direction.rotated(0.5), child.speed)
+			launch_ball(child.position, child.direction.rotated(-0.5), child.speed)
 
 
 func spawn_powerup(var location, var type = 0):
