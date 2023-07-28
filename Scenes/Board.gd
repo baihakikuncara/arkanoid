@@ -33,6 +33,26 @@ func _draw():
 	var rect = Vector2($CollisionShape2D.shape.extents.x * 2, $CollisionShape2D.shape.extents.y * 2)
 	draw_rect(Rect2(-rect/2, rect), color)
 
+
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			var point = event.position
+			if point.x < 200: direction.x = -1
+			elif point.x > 400: direction.x = +1
+			else: 
+				if !launched: launch_ball()
+		else: direction.x = 0
+	if event is InputEventKey:
+		if event.pressed:
+			if !launched and Input.is_action_pressed("ui_up"):
+				launch_ball()
+			if Input.is_action_pressed("ui_left"):
+				direction.x -= 1
+			if Input.is_action_pressed("ui_right"):
+				direction.x += 1
+		else: direction.x = 0
+
 func _process(delta):
 	if pause or game_over : return
 	if shoot_mode:
@@ -40,14 +60,7 @@ func _process(delta):
 		if shoot_timer > SHOOT_TIMEOUT:
 			shoot_timer = 0
 			shoot()
-	direction = Vector2(0,0)
-	if !launched and Input.is_action_pressed("ui_up"):
-		launch_ball()
-	if Input.is_action_pressed("ui_left"):
-		direction.x -= 1
-	if Input.is_action_pressed("ui_right"):
-		direction.x += 1
-		
+
 	if direction.x == 0 or direction.x != prev_direction: 
 		speed_adj = 0
 		prev_direction = direction.x
