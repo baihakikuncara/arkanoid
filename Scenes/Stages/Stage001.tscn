@@ -37,8 +37,9 @@ position = Vector2( 58, 291 )
 __meta__ = {
 "_edit_group_": true
 }
+fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 4
+powerup_type = 3
 
 [node name="Brick5" parent="." instance=ExtResource( 1 )]
 position = Vector2( 58, 303 )
@@ -65,7 +66,7 @@ __meta__ = {
 }
 fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 4
+powerup_type = 3
 
 [node name="Brick9" parent="." instance=ExtResource( 1 )]
 position = Vector2( 58, 351 )
@@ -266,7 +267,7 @@ __meta__ = {
 }
 fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 4
+powerup_type = 3
 
 [node name="Brick42" parent="." instance=ExtResource( 1 )]
 position = Vector2( 186, 267 )
@@ -293,7 +294,7 @@ __meta__ = {
 }
 fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 4
+powerup_type = 3
 
 [node name="Brick46" parent="." instance=ExtResource( 1 )]
 position = Vector2( 186, 315 )
@@ -692,7 +693,7 @@ __meta__ = {
 }
 fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 4
+powerup_type = 3
 
 [node name="Brick112" parent="." instance=ExtResource( 1 )]
 position = Vector2( 410, 267 )
@@ -719,7 +720,7 @@ __meta__ = {
 }
 fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 4
+powerup_type = 3
 
 [node name="Brick116" parent="." instance=ExtResource( 1 )]
 position = Vector2( 410, 315 )
@@ -954,8 +955,9 @@ position = Vector2( 538, 291 )
 __meta__ = {
 "_edit_group_": true
 }
+fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 4
+powerup_type = 3
 
 [node name="Brick155" parent="." instance=ExtResource( 1 )]
 position = Vector2( 538, 303 )
@@ -982,7 +984,7 @@ __meta__ = {
 }
 fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 4
+powerup_type = 3
 
 [node name="Brick159" parent="." instance=ExtResource( 1 )]
 position = Vector2( 538, 351 )
@@ -1093,7 +1095,6 @@ __meta__ = {
 }
 fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 1
 
 [node name="Brick177" parent="." instance=ExtResource( 1 )]
 position = Vector2( 218, 387 )
@@ -1216,7 +1217,7 @@ __meta__ = {
 }
 fill = Color( 0, 1, 1, 1 )
 has_powerup = true
-powerup_type = 3
+powerup_type = 2
 
 [node name="Brick197" parent="." instance=ExtResource( 1 )]
 position = Vector2( 442, 375 )

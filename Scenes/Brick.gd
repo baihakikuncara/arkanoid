@@ -17,7 +17,7 @@ func _ready():
 		outline = Color.white
 		fill = Color.black
 	if has_powerup:
-		fill = Color.cyan
+		fill = Color.gold
 		
 
 func _draw():

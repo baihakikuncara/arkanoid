@@ -1,7 +1,6 @@
 extends Area2D
 
 enum POWERUP {
-	NONE,
 	INC_SIZE,
 	DEC_SIZE,
 	SHOOT,
@@ -11,7 +10,18 @@ enum POWERUP {
 var pause = false
 var color = Color.aqua
 var speed = 100
-var type = POWERUP.NONE
+var type = POWERUP.INC_SIZE
+
+func _ready():
+	match type:
+		POWERUP.INC_SIZE:
+			color = Color.blue
+		POWERUP.DEC_SIZE:
+			color = Color.blueviolet
+		POWERUP.SHOOT:
+			color = Color.red
+		POWERUP.MULTIPLY:
+			color = Color.aqua
 
 func _draw():
 	var width = $CollisionShape2D.shape.height
