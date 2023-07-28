@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const HIT_MARK = preload("res://Scenes/Hit.tscn")
+
 const MAX_SPEED = 1000
 const SPEED_INCREASE = 10
 
@@ -13,6 +15,10 @@ func _physics_process(delta):
 	if pause: return
 	var collision = move_and_collide(direction *speed*delta)
 	if (collision):
+		var hitmark = HIT_MARK.instance()
+		hitmark.position = global_position
+		get_parent().add_child(hitmark)
+		
 		var modifier = 0
 		if collision.collider.has_method("hit"):
 			collision.collider.hit()
