@@ -1,6 +1,8 @@
 
 extends KinematicBody2D
 
+const HIT_MARK = preload("res://Scenes/Hit.tscn")
+
 var speed = 10
 var pause = false
 
@@ -14,6 +16,9 @@ func _process(delta):
 		return
 	var collision = move_and_collide(Vector2(0, -1) * speed)
 	if collision:
+		var hitmark = HIT_MARK.instance()
+		hitmark.position = collision.position
+		get_parent().add_child(hitmark)
 		if collision.collider.has_method("hit"):
 			collision.collider.hit()
 		queue_free()
