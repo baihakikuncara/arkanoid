@@ -54,7 +54,7 @@ rotation = 5.02655
 polygon = PoolVector2Array( -0.5, 0, 0.5, 0, 0.5, -2, -0.5, -2 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.1
 one_shot = true
 autostart = true
 
