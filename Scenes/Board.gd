@@ -20,6 +20,19 @@ var shoot_timer = 0
 var prev_direction = 0
 
 
+func setup():
+	launched = false
+	shoot_mode = false
+	shoot_timer = 0
+	get_node("BallSprite").visible = true
+	resize(DEFAULT_LENGTH- length)
+	update()
+	
+func _draw():
+	var color = Color.red if shoot_mode else Color.azure
+	var rect = Vector2($CollisionShape2D.shape.extents.x * 2, $CollisionShape2D.shape.extents.y * 2)
+	draw_rect(Rect2(-rect/2, rect), color)
+
 func _process(delta):
 	if pause or game_over : return
 	if shoot_mode:
@@ -41,19 +54,6 @@ func _process(delta):
 	else:
 		speed_adj = min(speed_adj + delta, 0.8)
 	move_and_collide(direction * SPEED * speed_adj)
-
-
-func _draw():
-	var color = Color.red if shoot_mode else Color.azure
-	var rect = Vector2($CollisionShape2D.shape.extents.x * 2, $CollisionShape2D.shape.extents.y * 2)
-	draw_rect(Rect2(-rect/2, rect), color)
-
-
-func resize(var val):
-	set_shoot_mode(false)
-	length = clamp(length + val, MIN_BOARD_SIZE, MAX_BOARD_SIZE)
-	$CollisionShape2D.shape.extents.x = 16 * length	
-	update()
 
 
 func collide(var p:Vector2):
@@ -79,15 +79,25 @@ func shoot():
 		parent.shoot($bullet1.global_position)
 		
 
-func setup():
-	launched = false
-	shoot_mode = false
-	shoot_timer = 0
-	get_node("BallSprite").visible = true
-	resize(DEFAULT_LENGTH- length)
+func resize(var val):
+	set_shoot_mode(false)
+	length = clamp(length + val, MIN_BOARD_SIZE, MAX_BOARD_SIZE)
+	$CollisionShape2D.shape.extents.x = 16 * length	
 	update()
+
+
+func set_shoot_mode(var state):
+	if state: resize(DEFAULT_LENGTH - length)
+	shoot_mode = state
+	if shoot_mode: 
+		shoot_timer = SHOOT_TIMEOUT
+	update()
+
+
+func multiply():
+	get_parent().multiply_ball()
 	
-	
+
 func game_over(var val = true):
 	game_over = val
 	var children = get_children()
@@ -107,17 +117,3 @@ func resume():
 	var children = get_children()
 	for child in children:
 		if child.has_method("resume"): child.resume()
-
-
-func set_shoot_mode(var state):
-	if state: resize(DEFAULT_LENGTH - length)
-	shoot_mode = state
-	if shoot_mode: 
-		shoot_timer = SHOOT_TIMEOUT
-	update()
-
-
-func multiply():
-	get_parent().multiply_ball()
-	
-

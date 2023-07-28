@@ -25,6 +25,28 @@ func set_hud():
 	$HUD.set_stage(current_level)
 
 
+func load_stage():
+	var path = "res://Scenes/Stages/Stage%0*d.tscn"%[3, current_level]
+	var directory = Directory.new()
+	if !directory.file_exists(path):
+		current_level-=1
+		game_over()
+		return
+	var scene = load(path)
+	if level != null : level.queue_free()
+	level = scene.instance()
+	add_child(level)
+	
+	brick_count = 0
+	var children = level.get_children()
+	for child in children:
+		if "breakable" in child and child.breakable:
+			brick_count+=1
+	set_hud()
+	$Splash.show_stage_splash(current_level)
+	$StageTimer.start()
+
+
 func launch_ball(var position, var direction, var speed = 200):
 	ball_count+=1
 	var ball = BALL_SCENE.instance()
@@ -48,28 +70,6 @@ func spawn_powerup(var location, var type = 0):
 	powerup.position = location
 	powerup.type = type
 	add_child(powerup)
-	
-
-func load_stage():
-	var path = "res://Scenes/Stages/Stage%0*d.tscn"%[3, current_level]
-	var directory = Directory.new()
-	if !directory.file_exists(path):
-		current_level-=1
-		game_over()
-		return
-	var scene = load(path)
-	if level != null : level.queue_free()
-	level = scene.instance()
-	add_child(level)
-	
-	brick_count = 0
-	var children = level.get_children()
-	for child in children:
-		if "breakable" in child and child.breakable:
-			brick_count+=1
-	set_hud()
-	$Splash.show_stage_splash(current_level)
-	$StageTimer.start()
 
 
 func brick_destroyed(var score):
