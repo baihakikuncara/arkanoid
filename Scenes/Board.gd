@@ -17,6 +17,7 @@ var pause = true
 var length = DEFAULT_LENGTH
 var shoot_mode = false
 var shoot_timer = 0
+var prev_direction = 0
 
 
 func _process(delta):
@@ -34,9 +35,12 @@ func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
 		
-	if direction.x == 0: speed_adj = 0
-	else: speed_adj+=delta
-	move_and_collide(direction * SPEED * clamp(speed_adj, 0, 0.8))
+	if direction.x == 0 or direction.x != prev_direction: 
+		speed_adj = 0
+		prev_direction = direction.x
+	else:
+		speed_adj = min(speed_adj + delta, 0.8)
+	move_and_collide(direction * SPEED * speed_adj)
 
 
 func _draw():
