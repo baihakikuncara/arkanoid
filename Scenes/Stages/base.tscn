@@ -4,11 +4,74 @@
 [ext_resource path="res://Scenes/Walls.tscn" type="PackedScene" id=2]
 
 [node name="Stage" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Walls" parent="." instance=ExtResource( 2 )]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
+}
+
+[node name="Brick" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 255 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 267 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 279 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 291 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 303 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 315 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 327 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 339 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 351 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 363 )
+__meta__ = {
+"_edit_group_": true
 }
 
 [node name="Brick11" parent="." instance=ExtResource( 1 )]
@@ -148,8 +211,6 @@ position = Vector2( 154, 279 )
 __meta__ = {
 "_edit_group_": true
 }
-fill = Color( 1, 0.843137, 0, 1 )
-has_powerup = true
 
 [node name="Brick34" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 291 )
@@ -189,12 +250,6 @@ __meta__ = {
 
 [node name="Brick40" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 363 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick41" parent="." instance=ExtResource( 1 )]
-position = Vector2( 186, 255 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -258,8 +313,12 @@ position = Vector2( 218, 255 )
 __meta__ = {
 "_edit_group_": true
 }
-has_powerup = true
-powerup_type = 3
+
+[node name="Brick111" parent="." instance=ExtResource( 1 )]
+position = Vector2( 186, 255 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Brick52" parent="." instance=ExtResource( 1 )]
 position = Vector2( 218, 267 )
@@ -315,13 +374,251 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Brick61" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 255 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick62" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 267 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick63" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 279 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick64" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 291 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick65" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 303 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick66" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 315 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick67" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 327 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick68" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 339 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick69" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 351 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick70" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 363 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick71" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 255 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick72" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 267 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick73" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 279 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick74" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 291 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick75" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 303 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick76" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 315 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick77" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 327 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick78" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 339 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick79" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 351 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick80" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 363 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick81" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 255 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick82" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 267 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick83" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 279 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick84" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 291 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick85" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 303 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick86" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 315 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick87" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 327 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick88" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 339 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick89" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 351 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick90" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 363 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick91" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 255 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick92" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 267 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick93" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 279 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick94" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 291 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick95" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 303 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick96" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 315 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick97" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 327 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick98" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 339 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick99" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 351 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick100" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 363 )
+__meta__ = {
+"_edit_group_": true
+}
+
 [node name="Brick101" parent="." instance=ExtResource( 1 )]
 position = Vector2( 378, 255 )
 __meta__ = {
 "_edit_group_": true
 }
-has_powerup = true
-powerup_type = 3
 
 [node name="Brick102" parent="." instance=ExtResource( 1 )]
 position = Vector2( 378, 267 )
@@ -343,6 +640,12 @@ __meta__ = {
 
 [node name="Brick105" parent="." instance=ExtResource( 1 )]
 position = Vector2( 378, 303 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick115" parent="." instance=ExtResource( 1 )]
+position = Vector2( 410, 303 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -377,13 +680,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick111" parent="." instance=ExtResource( 1 )]
-position = Vector2( 410, 255 )
-__meta__ = {
-"_edit_group_": true
-}
-powerup_type = 3
-
 [node name="Brick112" parent="." instance=ExtResource( 1 )]
 position = Vector2( 410, 267 )
 __meta__ = {
@@ -398,12 +694,6 @@ __meta__ = {
 
 [node name="Brick114" parent="." instance=ExtResource( 1 )]
 position = Vector2( 410, 291 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick115" parent="." instance=ExtResource( 1 )]
-position = Vector2( 410, 303 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -444,6 +734,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Brick154" parent="." instance=ExtResource( 1 )]
+position = Vector2( 410, 255 )
+__meta__ = {
+"_edit_group_": true
+}
+
 [node name="Brick122" parent="." instance=ExtResource( 1 )]
 position = Vector2( 442, 267 )
 __meta__ = {
@@ -455,9 +751,6 @@ position = Vector2( 442, 279 )
 __meta__ = {
 "_edit_group_": true
 }
-fill = Color( 1, 0.843137, 0, 1 )
-has_powerup = true
-powerup_type = 2
 
 [node name="Brick124" parent="." instance=ExtResource( 1 )]
 position = Vector2( 442, 291 )
@@ -585,6 +878,12 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Brick158" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 291 )
+__meta__ = {
+"_edit_group_": true
+}
+
 [node name="Brick145" parent="." instance=ExtResource( 1 )]
 position = Vector2( 506, 303 )
 __meta__ = {
@@ -621,14 +920,68 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick165" parent="." instance=ExtResource( 1 )]
-position = Vector2( 90, 387 )
+[node name="Brick151" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 255 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick166" parent="." instance=ExtResource( 1 )]
-position = Vector2( 90, 399 )
+[node name="Brick152" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 267 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick153" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 279 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick155" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 303 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick156" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 315 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick157" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 327 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick161" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 339 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick159" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 351 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick160" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 363 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick162" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 387 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick165" parent="." instance=ExtResource( 1 )]
+position = Vector2( 90, 387 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -639,23 +992,8 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick169" parent="." instance=ExtResource( 1 )]
-position = Vector2( 122, 399 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="Brick171" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 387 )
-__meta__ = {
-"_edit_group_": true
-}
-fill = Color( 1, 0.843137, 0, 1 )
-has_powerup = true
-powerup_type = 2
-
-[node name="Brick172" parent="." instance=ExtResource( 1 )]
-position = Vector2( 154, 399 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -666,20 +1004,32 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick175" parent="." instance=ExtResource( 1 )]
-position = Vector2( 186, 399 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="Brick177" parent="." instance=ExtResource( 1 )]
 position = Vector2( 218, 387 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick178" parent="." instance=ExtResource( 1 )]
-position = Vector2( 218, 399 )
+[node name="Brick180" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 387 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick183" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 387 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick186" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 387 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick189" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 387 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -690,35 +1040,14 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick193" parent="." instance=ExtResource( 1 )]
-position = Vector2( 378, 399 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="Brick195" parent="." instance=ExtResource( 1 )]
 position = Vector2( 410, 387 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick196" parent="." instance=ExtResource( 1 )]
-position = Vector2( 410, 399 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="Brick198" parent="." instance=ExtResource( 1 )]
 position = Vector2( 442, 387 )
-__meta__ = {
-"_edit_group_": true
-}
-fill = Color( 1, 0.843137, 0, 1 )
-has_powerup = true
-powerup_type = 1
-
-[node name="Brick199" parent="." instance=ExtResource( 1 )]
-position = Vector2( 442, 399 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -729,260 +1058,302 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick202" parent="." instance=ExtResource( 1 )]
-position = Vector2( 474, 399 )
-__meta__ = {
-"_edit_group_": true
-}
-
 [node name="Brick204" parent="." instance=ExtResource( 1 )]
 position = Vector2( 506, 387 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick205" parent="." instance=ExtResource( 1 )]
-position = Vector2( 506, 399 )
+[node name="Brick207" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 387 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick167" parent="." instance=ExtResource( 1 )]
+[node name="Brick163" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 375 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick166" parent="." instance=ExtResource( 1 )]
 position = Vector2( 90, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick170" parent="." instance=ExtResource( 1 )]
+[node name="Brick169" parent="." instance=ExtResource( 1 )]
 position = Vector2( 122, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick173" parent="." instance=ExtResource( 1 )]
+[node name="Brick172" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick176" parent="." instance=ExtResource( 1 )]
+[node name="Brick175" parent="." instance=ExtResource( 1 )]
 position = Vector2( 186, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick179" parent="." instance=ExtResource( 1 )]
+[node name="Brick178" parent="." instance=ExtResource( 1 )]
 position = Vector2( 218, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick194" parent="." instance=ExtResource( 1 )]
+[node name="Brick181" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 375 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick184" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 375 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick187" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 375 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick190" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 375 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick193" parent="." instance=ExtResource( 1 )]
 position = Vector2( 378, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick197" parent="." instance=ExtResource( 1 )]
+[node name="Brick196" parent="." instance=ExtResource( 1 )]
 position = Vector2( 410, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick200" parent="." instance=ExtResource( 1 )]
+[node name="Brick199" parent="." instance=ExtResource( 1 )]
 position = Vector2( 442, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick203" parent="." instance=ExtResource( 1 )]
+[node name="Brick202" parent="." instance=ExtResource( 1 )]
 position = Vector2( 474, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick206" parent="." instance=ExtResource( 1 )]
+[node name="Brick205" parent="." instance=ExtResource( 1 )]
 position = Vector2( 506, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick212" parent="." instance=ExtResource( 1 )]
-position = Vector2( 90, 423 )
+[node name="Brick208" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 375 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick213" parent="." instance=ExtResource( 1 )]
-position = Vector2( 90, 435 )
+[node name="Brick164" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick214" parent="." instance=ExtResource( 1 )]
-position = Vector2( 122, 423 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick215" parent="." instance=ExtResource( 1 )]
-position = Vector2( 122, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick216" parent="." instance=ExtResource( 1 )]
-position = Vector2( 154, 423 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick217" parent="." instance=ExtResource( 1 )]
-position = Vector2( 154, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick218" parent="." instance=ExtResource( 1 )]
-position = Vector2( 186, 423 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick219" parent="." instance=ExtResource( 1 )]
-position = Vector2( 186, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick220" parent="." instance=ExtResource( 1 )]
-position = Vector2( 218, 423 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick221" parent="." instance=ExtResource( 1 )]
-position = Vector2( 218, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick230" parent="." instance=ExtResource( 1 )]
-position = Vector2( 378, 423 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick231" parent="." instance=ExtResource( 1 )]
-position = Vector2( 378, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick232" parent="." instance=ExtResource( 1 )]
-position = Vector2( 410, 423 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick233" parent="." instance=ExtResource( 1 )]
-position = Vector2( 410, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick234" parent="." instance=ExtResource( 1 )]
-position = Vector2( 442, 423 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick235" parent="." instance=ExtResource( 1 )]
-position = Vector2( 442, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick236" parent="." instance=ExtResource( 1 )]
-position = Vector2( 474, 423 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick237" parent="." instance=ExtResource( 1 )]
-position = Vector2( 474, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick238" parent="." instance=ExtResource( 1 )]
-position = Vector2( 506, 423 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick239" parent="." instance=ExtResource( 1 )]
-position = Vector2( 506, 435 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Brick242" parent="." instance=ExtResource( 1 )]
+[node name="Brick167" parent="." instance=ExtResource( 1 )]
 position = Vector2( 90, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick243" parent="." instance=ExtResource( 1 )]
+[node name="Brick170" parent="." instance=ExtResource( 1 )]
 position = Vector2( 122, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick244" parent="." instance=ExtResource( 1 )]
+[node name="Brick173" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick245" parent="." instance=ExtResource( 1 )]
+[node name="Brick176" parent="." instance=ExtResource( 1 )]
 position = Vector2( 186, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick246" parent="." instance=ExtResource( 1 )]
+[node name="Brick179" parent="." instance=ExtResource( 1 )]
 position = Vector2( 218, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick251" parent="." instance=ExtResource( 1 )]
+[node name="Brick182" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 411 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick185" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 411 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick188" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 411 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick191" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 411 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick194" parent="." instance=ExtResource( 1 )]
 position = Vector2( 378, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick252" parent="." instance=ExtResource( 1 )]
+[node name="Brick197" parent="." instance=ExtResource( 1 )]
 position = Vector2( 410, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick253" parent="." instance=ExtResource( 1 )]
+[node name="Brick200" parent="." instance=ExtResource( 1 )]
 position = Vector2( 442, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick254" parent="." instance=ExtResource( 1 )]
+[node name="Brick203" parent="." instance=ExtResource( 1 )]
 position = Vector2( 474, 411 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Brick255" parent="." instance=ExtResource( 1 )]
+[node name="Brick206" parent="." instance=ExtResource( 1 )]
 position = Vector2( 506, 411 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick209" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 411 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick210" parent="." instance=ExtResource( 1 )]
+position = Vector2( 58, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick211" parent="." instance=ExtResource( 1 )]
+position = Vector2( 90, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick212" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick213" parent="." instance=ExtResource( 1 )]
+position = Vector2( 154, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick214" parent="." instance=ExtResource( 1 )]
+position = Vector2( 186, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick215" parent="." instance=ExtResource( 1 )]
+position = Vector2( 218, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick216" parent="." instance=ExtResource( 1 )]
+position = Vector2( 250, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick217" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick218" parent="." instance=ExtResource( 1 )]
+position = Vector2( 314, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick219" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick220" parent="." instance=ExtResource( 1 )]
+position = Vector2( 378, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick221" parent="." instance=ExtResource( 1 )]
+position = Vector2( 410, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick222" parent="." instance=ExtResource( 1 )]
+position = Vector2( 442, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick223" parent="." instance=ExtResource( 1 )]
+position = Vector2( 474, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick224" parent="." instance=ExtResource( 1 )]
+position = Vector2( 506, 399 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Brick225" parent="." instance=ExtResource( 1 )]
+position = Vector2( 538, 399 )
 __meta__ = {
 "_edit_group_": true
 }
