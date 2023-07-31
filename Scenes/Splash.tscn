@@ -9,7 +9,7 @@ font_data = ExtResource( 1 )
 
 [node name="Splash" type="Polygon2D"]
 visible = false
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0.647059 )
 polygon = PoolVector2Array( 0, 0, 600, 0, 600, 800, 0, 800 )
 script = ExtResource( 2 )
 
