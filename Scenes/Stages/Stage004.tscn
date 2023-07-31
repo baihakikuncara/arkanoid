@@ -79,6 +79,7 @@ position = Vector2( 90, 255 )
 __meta__ = {
 "_edit_group_": true
 }
+has_powerup = true
 
 [node name="Brick12" parent="." instance=ExtResource( 1 )]
 position = Vector2( 90, 267 )
@@ -175,6 +176,7 @@ position = Vector2( 122, 327 )
 __meta__ = {
 "_edit_group_": true
 }
+fill = Color( 1, 0.843137, 0, 1 )
 has_powerup = true
 
 [node name="Brick28" parent="." instance=ExtResource( 1 )]
@@ -260,8 +262,8 @@ position = Vector2( 282, 255 )
 __meta__ = {
 "_edit_group_": true
 }
+fill = Color( 1, 0.843137, 0, 1 )
 has_powerup = true
-powerup_type = 3
 
 [node name="Brick72" parent="." instance=ExtResource( 1 )]
 position = Vector2( 282, 267 )
@@ -322,8 +324,8 @@ position = Vector2( 314, 255 )
 __meta__ = {
 "_edit_group_": true
 }
+fill = Color( 1, 0.843137, 0, 1 )
 has_powerup = true
-powerup_type = 3
 
 [node name="Brick82" parent="." instance=ExtResource( 1 )]
 position = Vector2( 314, 267 )
@@ -480,6 +482,7 @@ position = Vector2( 474, 327 )
 __meta__ = {
 "_edit_group_": true
 }
+fill = Color( 1, 0.843137, 0, 1 )
 has_powerup = true
 
 [node name="Brick138" parent="." instance=ExtResource( 1 )]
@@ -505,6 +508,7 @@ position = Vector2( 506, 255 )
 __meta__ = {
 "_edit_group_": true
 }
+has_powerup = true
 
 [node name="Brick142" parent="." instance=ExtResource( 1 )]
 position = Vector2( 506, 267 )
@@ -769,12 +773,14 @@ position = Vector2( 282, 411 )
 __meta__ = {
 "_edit_group_": true
 }
+has_powerup = true
 
 [node name="Brick188" parent="." instance=ExtResource( 1 )]
 position = Vector2( 314, 411 )
 __meta__ = {
 "_edit_group_": true
 }
+has_powerup = true
 
 [node name="Brick191" parent="." instance=ExtResource( 1 )]
 position = Vector2( 346, 411 )
