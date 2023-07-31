@@ -2,6 +2,8 @@ tool
 
 extends StaticBody2D
 
+const EXPLOSION = preload("res://Scenes/Explosion.tscn")
+
 export var durability = 1
 export var score = 10
 export var breakable = true
@@ -32,6 +34,9 @@ func hit():
 	durability -= 1
 	if durability == 0:
 		queue_free()
+		var explosion = EXPLOSION.instance()
+		explosion.position = global_position
+		get_parent().add_child(explosion)
 		var stage = get_parent().get_parent()
 		if stage.has_method("brick_destroyed"):
 			stage.brick_destroyed(score)
