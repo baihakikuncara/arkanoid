@@ -1,6 +1,7 @@
 extends Area2D
 
 enum POWERUP {
+	RANDOM,
 	INC_SIZE,
 	DEC_SIZE,
 	SHOOT,
@@ -10,9 +11,12 @@ enum POWERUP {
 var pause = false
 var color = Color.aqua
 var speed = 100
-var type = POWERUP.INC_SIZE
+var type = POWERUP.RANDOM
 
 func _ready():
+	if type == POWERUP.RANDOM:
+		randomize()
+		type = randi() % (len(POWERUP)-1) + 1
 	match type:
 		POWERUP.INC_SIZE:
 			color = Color.blue
