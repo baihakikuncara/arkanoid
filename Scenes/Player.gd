@@ -30,7 +30,7 @@ func load_stage():
 	var directory = Directory.new()
 	if !directory.file_exists(path):
 		current_level-=1
-		game_over()
+		game_over(true)
 		return
 	var scene = load(path)
 	if level != null : level.queue_free()
@@ -117,8 +117,8 @@ func shoot(var pos):
 	add_child(bullet)
 
 
-func game_over():
-	$Splash.show_game_over_splash(current_level, scores)
+func game_over(var endgame = false):
+	$Splash.show_game_over_splash(current_level, scores, endgame)
 	$GameOverTimer.start()
 	var children = get_children()
 	for child in children:
