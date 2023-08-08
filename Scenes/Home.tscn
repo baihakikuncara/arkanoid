@@ -135,6 +135,7 @@ text = "Quit"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 300, 400 )
+current = true
 
 [connection signal="pressed" from="Control/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Control/Quit" to="." method="_on_Quit_pressed"]

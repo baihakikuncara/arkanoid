@@ -37,6 +37,7 @@ position = Vector2( 300, 750 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 300, 400 )
+current = true
 
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_GameOverTimer_timeout"]
 [connection signal="timeout" from="StageTimer" to="." method="_on_StageTimer_timeout"]
