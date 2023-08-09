@@ -148,3 +148,13 @@ func _on_GameOverTimer_timeout():
 
 func _on_StageTimer_timeout():
 	resume()
+	
+	
+func _notification(what):
+	if $StageTimer.is_stopped():
+		match what:
+			MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+				if pause:
+					get_tree().change_scene("res://Scenes/Home.tscn")
+				else:
+					pause()

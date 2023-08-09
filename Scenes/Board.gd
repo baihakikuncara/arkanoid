@@ -41,11 +41,11 @@ func _input(event):
 			if point.x < 200: direction.x = -1
 			elif point.x > 400: direction.x = +1
 			else: 
-				if !launched: launch_ball()
+				if !launched and !pause: launch_ball()
 		else: direction.x = 0
 	if event is InputEventKey:
 		if event.pressed:
-			if !launched and Input.is_action_pressed("ui_up"):
+			if !launched and !pause and Input.is_action_pressed("ui_up"):
 				launch_ball()
 			if Input.is_action_pressed("ui_left"):
 				direction.x -= 1

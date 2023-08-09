@@ -20,3 +20,10 @@ func _on_Quit_pressed():
 
 func _on_Start_pressed():
 	get_tree().change_scene("res://Scenes/Player.tscn")
+
+
+func _notification(what):
+	match what:
+		MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+			get_tree().quit()
+		
